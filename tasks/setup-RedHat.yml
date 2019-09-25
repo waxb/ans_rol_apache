@@ -1,0 +1,13 @@
+---
+- name: Ensure Apache is installed on RHEL.
+  package:
+    name: "{{ apache_packages }}"
+    state: "{{ apache_packages_state }}"
+    enablerepo: "{{ apache_enablerepo | default(omit, true) }}"
+
+#for demo
+
+- name: Insert Index Page
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html

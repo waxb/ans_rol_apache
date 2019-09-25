@@ -1,0 +1,6 @@
+- name: default
+  hosts: all
+  gather_facts: True
+  become: True
+  roles:
+    - ans_rol_apache
